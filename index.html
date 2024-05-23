@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caderno de Exercícios</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: #343a40;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .sidebar h2 {
+    margin-top: 0;
+    color: #fff;
+  }
+
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .sidebar li {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+  }
+
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+    text-align: justify;
+  }
+
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+
+  form {
+    margin-bottom: 20px;
+    text-align: justify;
+  }
+
+  h3 {
+    margin-top: 20px;
+    color: #333;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+  }
+
+  button:hover {
+    background-color: #23272b;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .modal-content h2 {
+    margin-top: 0;
+  }
+
+  .modal-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .modal-content li {
+    margin-bottom: 5px;
+  }
+
+  .modal-content button {
+    padding: 8px 15px;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+
+  .modal-content button:hover {
+    background-color: #23272b;
+  }
+
+  @media screen and (max-width: 600px) {
+    .container {
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .sidebar {
+      width: 100%;
+      max-width: none;
+      margin-bottom: 20px;
+    }
+
+    .main-content {
+      width: 100%;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="main-content" id="main-content">
+    <h1>Empatia Artificial</h1>
+    <form id="exercises-form">
+      <p>1. O que é empatia artificial?</p>
+      <label><input type="radio" name="q1" value="a"> a) A capacidade de máquinas entenderem e replicarem emoções humanas</label>
+      <label><input type="radio" name="q1" value="b"> b) O uso de inteligência artificial para substituir emoções humanas</label>
+      <label><input type="radio" name="q1" value="c"> c) Um algoritmo que gera respostas automáticas sem emoção</label>
+      <label><input type="radio" name="q1" value="d"> d) Uma tecnologia que ignora os sentimentos dos usuários</label>
+      <label><input type="radio" name="q1" value="e"> e) A capacidade de seres humanos de entender emoções de robôs</label>
+
+      <p>2. Qual das seguintes opções descreve melhor o reconhecimento de emoções por IA?</p>
+      <label><input type="radio" name="q2" value="a"> a) Análise de texto para detectar ironia</label>
+      <label><input type="radio" name="q2" value="b"> b) Uso de sensores para medir temperatura corporal</label>
+      <label><input type="radio" name="q2" value="c"> c) Análise de expressões faciais, voz e texto para identificar emoções</label>
+      <label><input type="radio" name="q2" value="d"> d) Monitoramento de batimentos cardíacos para detectar emoções</label>
+      <label><input type="radio" name="q2" value="e"> e) Utilização de algoritmos para gerar emoções artificiais</label>
+
+      <p>3. Qual é o papel do Processamento de Linguagem Natural (PLN) na empatia artificial?</p>
+      <label><input type="radio" name="q3" value="a"> a) Análise de dados estruturados para prever tendências de mercado</label>
+      <label><input type="radio" name="q3" value="b"> b) Transformar texto em linguagem de máquina</label>
+      <label><input type="radio" name="q3" value="c"> c) Compreender e gerar respostas naturais e emocionalmente relevantes</label>
+      <label><input type="radio" name="q3" value="d"> d) Traduzir textos de um idioma para outro sem perda de informações</label>
+      <label><input type="radio" name="q3" value="e"> e) Detectar fraudes em transações financeiras</label>
+
+      <p>4. Como os modelos de personalidade contribuem para a empatia artificial?</p>
+      <label><input type="radio" name="q4" value="a"> a) Adaptando as respostas da IA ao perfil emocional dos usuários</label>
+      <label><input type="radio" name="q4" value="b"> b) Medindo a inteligência emocional dos usuários</label>
+      <label><input type="radio" name="q4" value="c"> c) Atribuindo características humanas a robôs</label>
+      <label><input type="radio" name="q4" value="d"> d) Criando emoções artificiais em avatares virtuais</label>
+      <label><input type="radio" name="q4" value="e"> e) Gerando dados estatísticos sobre interações sociais</label>
+
+      <p>5. Qual é um exemplo de geração de respostas empáticas por IA?</p>
+      <label><input type="radio" name="q5" value="a"> a) Fornecer respostas padrão para perguntas frequentes</label>
+      <label><input type="radio" name="q5" value="b"> b) Ignorar as emoções do usuário e focar no problema técnico</label>
+      <label><input type="radio" name="q5" value="c"> c) Ajustar o tom e conteúdo das respostas com base no estado emocional do usuário</label>
+      <label><input type="radio" name="q5" value="d"> d) Utilizar respostas automáticas sem personalização</label>
+      <label><input type="radio" name="q5" value="e"> e) Gerar respostas emocionais aleatórias</label>
+
+      <p>6. Quais são as principais preocupações éticas em torno da empatia artificial?</p>
+      <label><input type="radio" name="q6" value="a"> a) O custo elevado de desenvolvimento de tecnologias de IA</label>
+      <label><input type="radio" name="q6" value="b"> b) A falta de dados suficientes para treinamento de IA</label>
+      <label><input type="radio" name="q6" value="c"> c) Privacidade, consentimento e uso indevido de dados emocionais</label>
+      <label><input type="radio" name="q6" value="d"> d) A complexidade de implementar algoritmos de reconhecimento de voz</label>
+      <label><input type="radio" name="q6" value="e"> e) A dificuldade de traduzir emoções humanas para linguagem de máquina</label>
+
+      <p>7. Qual é uma aplicação prática da empatia artificial?</p>
+      <label><input type="radio" name="q7" value="a"> a) Análise de big data para prever tendências de mercado</label>
+      <label><input type="radio" name="q7" value="b"> b) Assistentes virtuais oferecendo suporte emocional a usuários</label>
+      <label><input type="radio" name="q7" value="c"> c) Desenvolvimento de jogos de realidade virtual</label>
+      <label><input type="radio" name="q7" value="d"> d) Monitoramento de sistemas de segurança cibernética</label>
+      <label><input type="radio" name="q7" value="e"> e) Implementação de sistemas de controle de qualidade</label>
+
+      <p>8. Quais são algumas das limitações atuais da empatia artificial?</p>
+      <label><input type="radio" name="q8" value="a"> a) Capacidades ilimitadas de reconhecimento de emoções</label>
+      <label><input type="radio" name="q8" value="b"> b) Precisão total na interpretação de emoções complexas</label>
+      <label><input type="radio" name="q8" value="c"> c) Dificuldade em entender contextos culturais e individuais</label>
+      <label><input type="radio" name="q8" value="d"> d) Facilidade de integração em todos os dispositivos</label>
+      <label><input type="radio" name="q8" value="e"> e) Alta confiabilidade em todas as situações</label>
+
+      <p>9. Como a empatia artificial pode beneficiar a área da saúde mental?</p>
+      <label><input type="radio" name="q9" value="a"> a) Diagnosticar doenças sem intervenção humana</label>
+      <label><input type="radio" name="q9" value="b"> b) Substituir terapeutas humanos em sessões de terapia</label>
+      <label><input type="radio" name="q9" value="c"> c) Fornecer suporte emocional e monitoramento constante para pacientes</label>
+      <label><input type="radio" name="q9" value="d"> d) Realizar cirurgias complexas com precisão</label>
+      <label><input type="radio" name="q9" value="e"> e) Desenvolver medicamentos personalizados</label>
+
+      <p>10. Qual é o impacto da privacidade na implementação da empatia artificial?</p>
+      <label><input type="radio" name="q10" value="a"> a) Facilita a coleta de dados pessoais sem consentimento</label>
+      <label><input type="radio" name="q10" value="b"> b) Melhora a precisão das previsões emocionais sem regulamentação</label>
+      <label><input type="radio" name="q10" value="c"> c) Necessita de regulamentações rígidas para proteger os dados dos usuários</label>
+      <label><input type="radio" name="q10" value="d"> d) Permite a venda de dados emocionais a terceiros</label>
+      <label><input type="radio" name="q10" value="e"> e) Não tem impacto significativo na segurança dos dados</label>
+
+      <button type="button" onclick="checkAnswers()">Responder</button>
+    </form>
+  </div>
+</div>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>Sua Pontuação</h2>
+    <p id="score"></p>
+    <h3>Respostas Corretas</h3>
+    <ul id="correct-answers"></ul>    
+    <button onclick="closeModal()">Fechar</button>
+  </div>
+</div>
+
+<script>
+function checkAnswers() {
+  const correctAnswers = [
+    { answer: 'a', explanation: 'Empatia artificial refere-se à habilidade das máquinas de reconhecer, compreender e responder às emoções humanas de maneira adequada.' },
+    { answer: 'c', explanation: 'O reconhecimento de emoções por IA geralmente envolve a análise de múltiplos sinais, como expressões faciais, tons de voz e texto, para identificar corretamente as emoções dos usuários.' },
+    { answer: 'c', explanation: 'O PLN permite que a IA compreenda a linguagem humana em um contexto emocional e gere respostas apropriadas, ajudando a criar interações mais empáticas.' },
+    { answer: 'a', explanation: 'Modelos de personalidade ajudam a IA a personalizar suas respostas com base no perfil emocional individual dos usuários, tornando as interações mais relevantes e empáticas.' },
+    { answer: 'c', explanation: 'A geração de respostas empáticas envolve ajustar a comunicação da IA para refletir e responder ao estado emocional do usuário de maneira adequada.' },
+    { answer: 'c', explanation: 'A coleta e uso de dados emocionais levantam preocupações significativas sobre privacidade, consentimento informado e o potencial uso indevido dessas informações sensíveis.' },
+    { answer: 'b', explanation: 'Assistentes virtuais empáticos podem fornecer suporte emocional a usuários, ajudando em situações de estresse ou necessidade emocional.' },
+    { answer: 'c', explanation: 'A empatia artificial ainda enfrenta desafios significativos em interpretar corretamente as emoções em diferentes contextos culturais e individuais, o que pode levar a mal-entendidos.' },
+    { answer: 'c', explanation: 'A empatia artificial pode ser usada para oferecer suporte emocional contínuo e monitoramento de pacientes, ajudando a identificar sinais precoces de problemas de saúde mental.' },
+    { answer: 'c', explanation: 'A implementação de empatia artificial exige regulamentações rigorosas para garantir que os dados emocionais dos usuários sejam protegidos e usados de forma ética e segura.' }
+  ];
+
+  let score = 0;
+  const studentAnswers = [];
+  for (let i = 1; i <= 10; i++) {
+    const selectedAnswer = document.querySelector(`input[name=q${i}]:checked`);
+    if (selectedAnswer) {
+      studentAnswers.push({ question: i, selected: selectedAnswer.value, correct: correctAnswers[i - 1].answer, explanation: correctAnswers[i - 1].explanation });
+      if (selectedAnswer.value === correctAnswers[i - 1].answer) {
+        score++;
+      }
+    } else {
+      studentAnswers.push({ question: i, selected: null, correct: correctAnswers[i - 1].answer, explanation: correctAnswers[i - 1].explanation });
+    }
+  }
+
+  const modal = document.getElementById('modal');
+  const scoreDisplay = document.getElementById('score');
+  const correctAnswersList = document.getElementById('correct-answers');
+
+  scoreDisplay.textContent = `Pontuação: ${score}/10`;
+  correctAnswersList.innerHTML = '';
+
+  studentAnswers.forEach((answer, index) => {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `<strong>Questão ${answer.question}:</strong> Sua resposta: ${answer.selected || 'Não respondida'}<br>Resposta correta: ${answer.correct}<br>${answer.explanation}`;
+    correctAnswersList.appendChild(listItem);
+  });
+
+  modal.style.display = 'block';
+}
+
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.style.display = 'none';
+}
+</script>
+
+</body>
+</html>
